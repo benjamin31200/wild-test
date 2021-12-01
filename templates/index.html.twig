@@ -1,17 +1,12 @@
-{% extends "base.html.twig" %}
+{% extends 'base.html.twig' %}
 
-{% block title %}Welcome!{% endblock %}
-{% block head %}
-    {{ parent() }}
-{% endblock %}
+{% block title %}All programs{% endblock %}
+
 {% block body %}
-<header>
-{% include "_navbar.html.twig" %}
-</header>
+    <h1>Toutes les séries de la table program : </h1>
+    
 
-     <h1>Bienvenue!</h1> 
-
-     <img src="{{ asset('build/images/bomb.jpg') }}" alt=""/>
-
- 
+    <a href="{{ path('program_index') }}">
+        clique ici!
+    </a>
 {% endblock %}

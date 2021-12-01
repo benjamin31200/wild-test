@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All programs
+{% endblock %}
+
+{% block body %}
+
+	<p>Voici la catégorie sélectionnée: {{names}}</p>
+
+	<a href="{{ path('category_show', {name: names}) }}">
+		Trois séries de cette catégorie
+	</a>
+    </br>
+	<a href="{{ path('app_index') }}">
+		Retour à l'accueil
+	</a>
+
+{% endblock %}

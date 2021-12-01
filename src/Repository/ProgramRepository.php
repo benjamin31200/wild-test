@@ -19,9 +19,24 @@ class ProgramRepository extends ServiceEntityRepository
         parent::__construct($registry, Program::class);
     }
 
-    // /**
-    //  * @return Program[] Returns an array of Program objects
-    //  */
+    /**
+     * @return Program[]
+     */
+    public function findByCategoryName(): array
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT p
+            FROM App\Entity\Program p
+            ORDER BY p.id ASC'
+            
+        )->setMaxResults(3);
+
+        // returns an array of Product objects
+         return $query->getResult();
+    }
+
     /*
     public function findByExampleField($value)
     {

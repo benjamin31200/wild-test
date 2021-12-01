@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All programs{% endblock %}
+
+{% block body %}
+  {% for category in categories %}
+  {% if category %}
+  <p>Voici le numéro de cette série : {{category.id}}</p></br>
+  <p>Son titre : {{category.title}}</br>
+  ainsi que son résumé : {{category.summary}}</p></br>
+
+  <a href="{{ path('program_show', {id: category.id}) }}"><p>Tu peux également retrouver sa fiche ici : </p></a>
+       
+   
+
+  {% else %} 
+
+  <p>Désolé, aucune séries n'a été trouvées dans cette catégorie.</p>
+  {% endif %}
+  {% endfor %}  
+ <pre>
+    {{ dump(categories) }}
+</pre>
+    <a href="{{ path('category_index', {name: name}) }}">
+        Retour vers la catégorie
+    </a>
+
+{% endblock %}
